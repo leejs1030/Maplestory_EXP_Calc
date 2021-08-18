@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+    <title>메이플스토리 성장 비약 계산기</title>
+    <meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="./style.css">
+    <script defer src="./exp.js"></script>
+</head>
+<body>
+    <div id = "background">
+        <div id = "userinfo" class = "user">
+            <input type = "text" id = "userlevel" class = "user">레벨 &emsp; <input type = "text" id = "userexp" class = "user">%
+        </div>
+        <br><br><br><br><br>
+        <div id = "1st" class = "elixir">
+            성장의 비약 1<br><input type = "text" placeholder = "200 ~ 209에서 1 업">(개)
+        </div>
+        <div id = "2nd" class = "elixir">
+            성장의 비약 2<br><input type = "text" placeholder = "200 ~ 219에서 1 업">(개)
+        </div>
+        <div id = "3rd" class = "elixir">
+            성장의 비약 3<br><input type = "text" placeholder = "200 ~ 229에서 1 업">(개)
+        </div>
+        <div id = "4th" class = "elixir">
+            태풍 성장의 비약<br><input type = "text" placeholder = "200 ~ 239에서 1 업">(개)
+        </div>
+        <div id = "5th" class = "elixir">
+            극한 성장의 비약<br><input type = "text" placeholder = "200 ~ 249에서 1 업">(개)
+        </div>
+
+        <br><br><br><br><br>
+
+        <div class = "results">
+            <button id = "submit">사용</button>
+            <br><br><br>
+            결과: <span id = "resultlevel" class = "results">0</span>레벨&nbsp;&nbsp;&nbsp;<span id = "resultexp" class = "results">0</span>%
+        </div>
+    </div>
+</body>

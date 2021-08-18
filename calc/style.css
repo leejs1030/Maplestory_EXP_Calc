@@ -1,0 +1,26 @@
+.elixir{
+    display: inline-block;
+    margin: 20px;
+}
+
+#background{
+    position: absolute;
+    left: 10%;
+    right: 10%;
+}
+
+#userinfo{
+    text-align: center;
+}
+
+.results{
+    text-align: center;
+}
+
+body{
+    font-size: 16pt;
+}
+
+#submit{
+    font-size: 30pt;
+}
