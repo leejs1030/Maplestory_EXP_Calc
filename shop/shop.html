@@ -3,16 +3,25 @@
     <title>메이플스토리 성장 비약 계산기</title>
     <meta charset="utf-8">
     <link type="text/css" rel="stylesheet" href="./style.css">
+    <script defer src="./shop.js"></script>
 </head>
 <body>
     <div id = "info_frame" class = "user_info">
-        <input id = "input_level" class = "user_info">레벨&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;<input id = "input_exp" class = "user_info">%&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;<input id = "input_coin" class = "user_info">코인&nbsp;&nbsp;&nbsp;&nbsp;
+        <input id = "input_level" class = "user_info">레벨<span class="tab">&#9;</span>
+        <input id = "input_exp" class = "user_info" value = "0">%<span class="tab">&#9;</span>
+        <input id = "input_coin" class = "user_info">코인<span class="tab">&#9;</span>
         <button id = "submit" class = "user_info">확인</button>
     </div>
-    <div class = "show_result">
-        <div id = "order" class = "show_result">ㅎㅎ</div>
-        <div id = "amount" class = "show_result">ㅎㅎ</div>
+    <br><br><br><br><br>
+    <div class = "frame show_result">
+        <div id = "amount" class = "show_result">
+            <div id = "elixir1" class = "show_result"></div>
+            <div id = "elixir2" class = "show_result"></div>
+            <div id = "elixir3" class = "show_result"></div>
+            <div id = "elixir4" class = "show_result"></div>
+            <div id = "elixir5" class = "show_result"></div>
+            <br>
+            <span id = "result_level" class = "show_result">0</span>레벨&nbsp;&nbsp;&nbsp;<span id = "result_exp" class = "show_result">0</span>%
+        </div>
     </div>
 </body>

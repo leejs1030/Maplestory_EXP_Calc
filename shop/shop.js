@@ -176,6 +176,8 @@ const dfs = (n, POINT) => {
 
 const showResult = () => {
     let printing = [0, 0, 0, 0, 0];
+    document.getElementById("result_level").textContent = parseInt(arr[res][0]);
+    document.getElementById("result_exp").textContent = (arr[res][0] - parseInt(arr[res][0])) * 100;
     while(res >= 0){
         for(let i = 0; i < 5; i++){
             if(res - arr[res][1] == elixirCoin[i]){
@@ -189,19 +191,19 @@ const showResult = () => {
     for(let i = 0; i < 5; i++){
         switch(i){
             case 0:
-                console.log("성장의 비약 1 : " + printing[i] + "(개)");
+                document.getElementById("elixir1").innerHTML = "성장의 비약 1:<span class=\"tab\">&#9;</span>" + printing[i] + "(개)";
                 break;
             case 1:
-                console.log("성장의 비약 2 : " + printing[i] + "(개)");
+                document.getElementById("elixir2").innerHTML = "성장의 비약 2:<span class=\"tab\">&#9;</span>" + printing[i] + "(개)";
                 break;
             case 2:
-                console.log("성장의 비약 3 : " + printing[i] + "(개)");
+                document.getElementById("elixir3").innerHTML = ("성장의 비약 3:<span class=\"tab\">&#9;</span>" + printing[i] + "(개)");
                 break;
             case 3:
-                console.log("태풍 성장의 비약 : " + printing[i] + "(개)");
+                document.getElementById("elixir4").innerHTML = ("태풍 성장의 비약:<span class=\"tab\">&#9;</span>" + printing[i] + "(개)");
                 break;
             case 4:
-                console.log("극한 성장의 비약 : " + printing[i] + "(개)");
+                document.getElementById("elixir5").innerHTML = ("극한 성장의 비약:<span class=\"tab\">&#9;</span>" + printing[i] + "(개)");
                 break;
         }
     }
@@ -223,7 +225,21 @@ const main = (lv, xp, po) => {
     showResult();
 }
 
-/*
-이벤트리스너 추가. lv, xp, po 받아오기.
-main(lv, xp, po);
-*/
+
+document.getElementById("submit").addEventListener('click', ()=>{
+    let lv = parseInt(document.getElementById("input_level").value);
+    let xp = parseFloat(document.getElementById("input_exp").value);
+    let po = parseInt(document.getElementById("input_coin").value);
+    if(lv < 200 || lv >= 300){
+        return alert("200레벨 이상, 300레벨 미만으로 입력해주세요!");
+        
+    }
+    if(xp < 0 || xp >= 100){
+        return alert("0%이상, 100%미만으로 입력해주세요!");
+    }
+    if(po < 0 || po > 12000){
+        return alert("비 정상적인 포인트 입니다.");
+    }
+    console.log(xp);
+    main(lv, xp, po);
+});

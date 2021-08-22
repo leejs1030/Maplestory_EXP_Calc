@@ -155,7 +155,7 @@ const isProper = (n, m, M) =>{
 document.getElementById("submit").addEventListener('click', ()=>{
 
     user.level = parseInt(document.getElementById("userlevel").value);
-    user.exp = parseInt(document.getElementById("userexp").value) / 100;
+    user.exp = parseFloat(document.getElementById("userexp").value) / 100;
 
     if(!isProper(user.level, 200, 299)){
         alert("사용자의 레벨은 200렙 이상 299렙 이하로 해주세요!");
