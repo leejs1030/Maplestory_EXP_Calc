@@ -1,17 +1,56 @@
 <!DOCTYPE html>
 <head>
-    <title>메이플스토리 성장 비약 계산기</title>
-    <meta charset="utf-8">
-    <link type="text/css" rel="stylesheet" href="./style.css">
+  <title>메이플스토리 성장 비약 계산기</title>
+  <meta charset="utf-8">
+  <link type="text/css" rel="stylesheet" href="./css/bootstrap.css">
+  <link type="text/css" rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div id = "Menu_Title">
-        <a href="#" is-visible="false">
-            <img id="hamburger" src="./hamburger-icon.png" alt="icon" is-visible="false">
-        </a>
+  
+  <nav class = "navbar navbar-default">
+    <div class = "container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href = "#"><img alt = "EXP" src = "./expcoupon.png"></a>
+      </div>
+      <ul class= "navbar-nav nav">
+        <li>
+          <a href = "./calc/calc.html">비약 계산기</a>
+        </li>
+        <li>
+          <a href = "./shop/shop.html">펀치킨 구매 추천</a>
+        </li>
+      </ul>
     </div>
-    <div id = "MenuBar">
-        <a class = "select_menu" href = "./calc/calc.html"><div class = "menus">비약 계산기</div></a>
-        <a class = "select_menu" href = "./shop/shop.html"><div class = "menus">펀치킹 구매 추천</div></a>
+  </nav>
+
+  <div class = "description">
+    <div class = "container-fluid">
+      <h1>
+        메이플스토리 경험치 계산기
+      </h1>
+      <p>
+        경험치를 얼마나 먹느냐는 중요한 문제입니다. 그리고 경험치를 얻기 위한 여러가지 수단 중, 가장 편리한 방법은 비약일 것입니다. 편리함에 효과를 더하기 위해서, 계산기를 사용해 봅시다.<br><br><br><br>
+      </p>
+      <h1>
+        <a href = "./calc/calc.html">비약 계산기</a>
+      </h1>
+      <p>
+        비약 계산기를 통하여 비약을 먹고난 후의 상태를 짐작할 수 있습니다.
+        여러가지 비약을 사용해보세요.<br><br><br><br>
+      </p>
+      <h1>
+        <a href = "./shop/shop.html">펀치킹 구매 추천</a>
+      </h1>
+      <p>
+      레벨별로 달라지는 비약의 효율. 그리고 여러 개의 비약을 조합했을 때의 효율. 그러한 게산은 직접 하기 까다롭습니다.<br>
+      굳이 모든 경우를 일일히 확인해 보실 필요는 없습니다. 여기에 레벨, 경험치 그리고 코인의 갯수만 입력해주신다면, 어떻게 사용해야 높은 레벨을 달성할 수 있을지 알려 드리겠습니다.
+      </p>
     </div>
+  </div>
+
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script type="text/javascript" src="./js/bootstrap.js"></script>
 </body>
