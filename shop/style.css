@@ -19,3 +19,17 @@
 }
 
 .tab { white-space: pre; }
+
+.navbar-brand{
+    padding-top: 8px;
+    padding-left: 12px;
+}
+
+.navbar-default {
+    background-color: rgb(180, 213, 252);
+}
+
+li > a{
+    font-size: 18px;
+}
+

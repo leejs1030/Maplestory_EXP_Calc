@@ -177,7 +177,7 @@ const dfs = (n, POINT) => {
 const showResult = () => {
     let printing = [0, 0, 0, 0, 0];
     document.getElementById("result_level").textContent = parseInt(arr[res][0]);
-    document.getElementById("result_exp").textContent = (arr[res][0] - parseInt(arr[res][0])) * 100;
+    document.getElementById("result_exp").textContent = Math.round((arr[res][0] - parseInt(arr[res][0])) * 100 * 1000) / 1000;
     while(res >= 0){
         for(let i = 0; i < 5; i++){
             if(res - arr[res][1] == elixirCoin[i]){
@@ -225,21 +225,53 @@ const main = (lv, xp, po) => {
     showResult();
 }
 
+const isProper = (n, m, M) =>{
+    if(isNaN(n)) return false;
+    if(n < m) return false;
+    if(n > M) return false;
+    return true;
+}
 
 document.getElementById("submit").addEventListener('click', ()=>{
     let lv = parseInt(document.getElementById("input_level").value);
     let xp = parseFloat(document.getElementById("input_exp").value);
     let po = parseInt(document.getElementById("input_coin").value);
-    if(lv < 200 || lv >= 300){
+
+    const MPOINT = 12000;
+
+    if(!isProper(lv, 200, 300)){
         return alert("200레벨 이상, 300레벨 미만으로 입력해주세요!");
         
     }
-    if(xp < 0 || xp >= 100){
+    if(!isProper(xp, 0, 100)){
         return alert("0%이상, 100%미만으로 입력해주세요!");
     }
-    if(po < 0 || po > 12000){
+    if(!isProper(po, 0, MPOINT + 1)){
         return alert("비 정상적인 포인트 입니다.");
     }
     console.log(xp);
     main(lv, xp, po);
+});
+
+window.addEventListener("keyup", (e) => {
+    if(e.keyCode == 13){
+        let lv = parseInt(document.getElementById("input_level").value);
+        let xp = parseFloat(document.getElementById("input_exp").value);
+        let po = parseInt(document.getElementById("input_coin").value);
+
+        const MPOINT = 12000;
+
+        if(!isProper(lv, 200, 300)){
+            return alert("200레벨 이상, 300레벨 미만으로 입력해주세요!");
+            
+        }
+        if(!isProper(xp, 0, 100)){
+            return alert("0%이상, 100%미만으로 입력해주세요!");
+        }
+        if(!isProper(po, 0, MPOINT + 1)){
+            return alert("비 정상적인 포인트 입니다.");
+        }
+        console.log(xp);
+        main(lv, xp, po);
+    }
 });

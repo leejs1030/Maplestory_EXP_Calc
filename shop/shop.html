@@ -2,26 +2,51 @@
 <head>
     <title>메이플스토리 성장 비약 계산기</title>
     <meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap.css">
     <link type="text/css" rel="stylesheet" href="./style.css">
     <script defer src="./shop.js"></script>
 </head>
 <body>
-    <div id = "info_frame" class = "user_info">
-        <input id = "input_level" class = "user_info">레벨<span class="tab">&#9;</span>
-        <input id = "input_exp" class = "user_info">%<span class="tab">&#9;</span>
-        <input id = "input_coin" class = "user_info">코인<span class="tab">&#9;</span>
-        <button id = "submit" class = "user_info">확인</button>
-    </div>
-    <br><br><br><br><br>
-    <div class = "frame show_result">
-        <div id = "amount" class = "show_result">
-            <div id = "elixir1" class = "show_result"></div>
-            <div id = "elixir2" class = "show_result"></div>
-            <div id = "elixir3" class = "show_result"></div>
-            <div id = "elixir4" class = "show_result"></div>
-            <div id = "elixir5" class = "show_result"></div>
-            <br>
-            <span id = "result_level" class = "show_result">0</span>레벨&nbsp;&nbsp;&nbsp;<span id = "result_exp" class = "show_result">0</span>%
+    <nav class = "navbar navbar-default">
+        <div class = "container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href = "/index.html"><img alt = "EXP" src = "/expcoupon.png"></a>
+            </div>
+            <ul class= "navbar-nav nav">
+                <li>
+                <a href = "/calc/calc.html">비약 계산기</a>
+                </li>
+                <li>
+                <a href = "/shop/shop.html">펀치킹 구매 추천</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class = "main">
+        <div id = "info_frame" class = "user_info">
+            <input id = "input_level" class = "user_info">레벨<span class="tab">&#9;</span>
+            <input id = "input_exp" class = "user_info" value = "0">%<span class="tab">&#9;</span>
+            <input id = "input_coin" class = "user_info">코인<span class="tab">&#9;</span>
+            <button id = "submit" class = "user_info">확인</button>
+        </div>
+        <br><br><br><br><br>
+        <div class = "frame show_result">
+            <div id = "amount" class = "show_result">
+                <div id = "elixir1" class = "show_result"></div>
+                <div id = "elixir2" class = "show_result"></div>
+                <div id = "elixir3" class = "show_result"></div>
+                <div id = "elixir4" class = "show_result"></div>
+                <div id = "elixir5" class = "show_result"></div>
+                <br>
+                <span id = "result_level" class = "show_result">0</span>레벨&nbsp;&nbsp;&nbsp;<span id = "result_exp" class = "show_result">0</span>%
+            </div>
         </div>
     </div>
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.js"></script>
 </body>

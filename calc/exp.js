@@ -152,8 +152,7 @@ const isProper = (n, m, M) =>{
     return true;
 }
 
-document.getElementById("submit").addEventListener('click', ()=>{
-
+const main = () =>{
     user.level = parseInt(document.getElementById("input_level").value);
     user.exp = parseFloat(document.getElementById("input_exp").value) / 100;
 
@@ -191,6 +190,15 @@ document.getElementById("submit").addEventListener('click', ()=>{
     // console.log(user.level);
     // console.log(user.exp * 100);
     document.getElementById("resultlevel").textContent = user.level;
-    document.getElementById("resultexp").textContent = user.exp * 100;
+    document.getElementById("resultexp").textContent = Math.round(user.exp * 100 * 1000) / 1000;
+}
 
+document.getElementById("submit").addEventListener('click', ()=>{
+    main();
+});
+
+window.addEventListener("keyup", (e) => {
+    if(e.keyCode == 13){
+        main();
+    }
 });
