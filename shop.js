@@ -145,7 +145,8 @@ const elixir = (num) => {
 
 
 
-let elixirCoin = [1000, 1500, 2000, 4500, 7000];
+const elixirCoin = [3, 6, 2000, 4500, 7000];
+const MPOINT = 30;
 
 let arr = new Array(50000);
 
@@ -237,8 +238,6 @@ document.getElementById("submit").addEventListener('click', ()=>{
     let xp = parseFloat(document.getElementById("input_exp").value);
     let po = parseInt(document.getElementById("input_coin").value);
 
-    const MPOINT = 12000;
-
     if(!isProper(lv, 200, 300)){
         return alert("200레벨 이상, 300레벨 미만으로 입력해주세요!");
         
@@ -246,7 +245,7 @@ document.getElementById("submit").addEventListener('click', ()=>{
     if(!isProper(xp, 0, 100)){
         return alert("0%이상, 100%미만으로 입력해주세요!");
     }
-    if(!isProper(po, 0, MPOINT + 1)){
+    if(!isProper(po, 0, MPOINT)){
         return alert("비 정상적인 포인트 입니다.");
     }
     console.log(xp);
@@ -259,7 +258,6 @@ window.addEventListener("keyup", (e) => {
         let xp = parseFloat(document.getElementById("input_exp").value);
         let po = parseInt(document.getElementById("input_coin").value);
 
-        const MPOINT = 12000;
 
         if(!isProper(lv, 200, 300)){
             return alert("200레벨 이상, 300레벨 미만으로 입력해주세요!");
@@ -268,7 +266,7 @@ window.addEventListener("keyup", (e) => {
         if(!isProper(xp, 0, 100)){
             return alert("0%이상, 100%미만으로 입력해주세요!");
         }
-        if(!isProper(po, 0, MPOINT + 1)){
+        if(!isProper(po, 0, MPOINT)){
             return alert("비 정상적인 포인트 입니다.");
         }
         console.log(xp);
