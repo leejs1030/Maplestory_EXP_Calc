@@ -1,9 +1,26 @@
 #help-text{
-    width: 172px;
+    width: auto;
     position: absolute;
-    /* top: 50px; */
-    margin-left: 10px;
+    border: 3px solid rgb(180, 213, 252);
+    background-color: white;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: left;
     z-index: 9999999999999;
+}
+
+#help-btn{
+    /* margin-left: 125px; */
+    margin-top: 4px;
+    font-size: 24px;
+    width: auto;
+    color: rgb(87, 163, 255);
+}
+
+#help-frame{
+    position: absolute;
+    width: 18%;
+    text-align: center;
 }
 
 .collapsing {

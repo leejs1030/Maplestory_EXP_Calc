@@ -5,6 +5,8 @@
     <link type="text/css" rel="stylesheet" href="./css/bootstrap.css">
     <link type="text/css" rel="stylesheet" href="./shop.css">
     <link type="text/css" rel="stylesheet" href="./shop-help.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
     <script defer type="module" src="./shop.js"></script>
     <script defer type="module" src="./shop-help.js"></script>
 </head>
@@ -27,11 +29,12 @@
 
 
     <div class = "main">
-        <button class="nav-link collapsed" id="help-btn" data-toggle="collapse" href="#help-text" aria-expanded="false" aria-controls="help-text">
-            ?
-        </button>
-        <div class="collapse" id="help-text">
-            zz
+        <div id="help-frame" class="help-info">
+            <i class="fa"></i>
+            <i class="nav-link collapsed help-info fa fa-question-circle" id="help-btn" data-toggle="collapse"
+                href="#help-text" aria-expanded="false" aria-controls="help-text">
+            </i>
+            <div class="collapse" id="help-text"></div>
         </div>
 
         <div id = "info_frame" class = "user_info">
