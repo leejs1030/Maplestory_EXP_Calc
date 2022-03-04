@@ -87,7 +87,7 @@ const main = (lv, xp, po) => {
         dp[i] = new Array(2);
         dp[i][0] = 0;
     }
-    dp[0][0] = data.user.level + (data.user.exp / 100);
+    dp[0][0] = data.user.level + data.user.exp;
     res = 0;
     
     dfs(0, POINT);
@@ -97,7 +97,7 @@ const main = (lv, xp, po) => {
 const doWithInput = () => {
     console.log('hi');
     let lv = parseInt(document.getElementById('input_level').value);
-    let xp = parseFloat(document.getElementById('input_exp').value);
+    let xp = parseFloat(document.getElementById('input_exp').value) / 100;
     let po = parseInt(document.getElementById('input_coin').value);
 
     if(!data.isProper(lv, data.min_lv, data.max_lv)) return alert('200레벨 이상, 300레벨 미만으로 입력해주세요!');
