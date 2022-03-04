@@ -1,26 +1,42 @@
 import * as data from './exp.js';
 
-let arr = new Array(50000);
+/**
+ * @type {number[][]}
+ * arr[i][0]: i개의 코인을 사용해서 도달 가능한 최대 레벨+경험치.
+ * 예를 들어, 232.049라면 232레벨 4.9%
+ * 
+ * arr[i][1]: i개의 코인을 사용하기 직전에 어디에서 사용했는지. back-trace를 위함
+ */
+let dp = new Array(50000);
 
 for(let i = 0; i < 50000; i++){
-    arr[i] = new Array(2);
-    arr[i][0] = arr[i][1] = 0;
+    dp[i] = new Array(2);
+    dp[i][0] = dp[i][1] = 0;
 }
 
 
 let res = 0;
 
+/**
+ * 
+ * @param {number} n
+ * Currently used number of point(coin)
+ * @param {number} POINT 
+ * Total point user is having
+ * @returns 
+ * max level and exp from using n and maximum POINT
+ */
 const dfs = (n, POINT) => {
     for(let i = 0; i < 5; i++){
         if(n + data.elixirCoin[i] <= POINT){
-            data.user.level = parseInt(arr[n][0]);
-            data.user.exp = arr[n][0] - data.user.level;
+            data.user.level = parseInt(dp[n][0]);
+            data.user.exp = dp[n][0] - data.user.level;
             if(data.user.level >= data.max_lv) return;
             data.elixir(i + 1);
-            if(data.user.level + data.user.exp > arr[n + data.elixirCoin[i]][0]){
-                arr[n + data.elixirCoin[i]][0] = data.user.level + data.user.exp;
-                if(arr[res][0] < arr[n + data.elixirCoin[i]][0]) res = n + data.elixirCoin[i];
-                arr[n + data.elixirCoin[i]][1] = n;
+            if(data.user.level + data.user.exp > dp[n + data.elixirCoin[i]][0]){
+                dp[n + data.elixirCoin[i]][0] = data.user.level + data.user.exp;
+                if(dp[res][0] < dp[n + data.elixirCoin[i]][0]) res = n + data.elixirCoin[i];
+                dp[n + data.elixirCoin[i]][1] = n;
                 dfs(n + data.elixirCoin[i], POINT);
             }
         }
@@ -30,16 +46,16 @@ const dfs = (n, POINT) => {
 
 const showResult = () => {
     let printing = [0, 0, 0, 0, 0];
-    document.getElementById('result_level').textContent = parseInt(arr[res][0]);
-    document.getElementById('result_exp').textContent = Math.round((arr[res][0] - parseInt(arr[res][0])) * 100 * 1000) / 1000;
+    document.getElementById('result_level').textContent = parseInt(dp[res][0]);
+    document.getElementById('result_exp').textContent = Math.round((dp[res][0] - parseInt(dp[res][0])) * 100 * 1000) / 1000;
     while(res >= 0){
         for(let i = 0; i < 5; i++){
-            if(res - arr[res][1] == data.elixirCoin[i]){
+            if(res - dp[res][1] == data.elixirCoin[i]){
                 printing[i]++;
                 break;
             }
         }
-        res = arr[res][1];
+        res = dp[res][1];
     }
 
     for(let i = 0; i < 5; i++){
@@ -67,12 +83,11 @@ const main = (lv, xp, po) => {
     data.user.level = lv; data.user.exp = xp;//Here will get data.user level, exp and point.
     const POINT = po;
 
-
     for(let i = 0; i < 50000; i++){
-        arr[i] = new Array(2);
-        arr[i][0] = 0;
+        dp[i] = new Array(2);
+        dp[i][0] = 0;
     }
-    arr[0][0] = data.user.level + (data.user.exp / 100);
+    dp[0][0] = data.user.level + (data.user.exp / 100);
     res = 0;
     
     dfs(0, POINT);
