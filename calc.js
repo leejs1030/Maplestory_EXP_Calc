@@ -2,8 +2,8 @@ import * as data from './exp.js';
 
 const main = () =>{
     data.user.level = parseInt(document.getElementById("input_level").value);
-    data.user.percent = parseFloat(document.getElementById("input_exp").value) / 100;
-    data.setPercent();
+    const percent = document.getElementById("input_exp").value;
+    data.setPercent(parseFloat((percent === "") ? "0" : percent) / 100);
 
     if(!data.isProper(data.user.level, data.min_lv, data.max_lv)){
         alert("사용자의 레벨은 200렙 이상 299렙 이하로 해주세요!");

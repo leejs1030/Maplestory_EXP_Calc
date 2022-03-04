@@ -125,8 +125,10 @@ const main = (lv, xp, po) => {
 
 const doWithInput = () => {
     let lv = parseInt(document.getElementById('input_level').value);
-    let xp = parseFloat(document.getElementById('input_exp').value) / 100;
     let po = parseInt(document.getElementById('input_coin').value);
+    let xp = document.getElementById('input_exp').value;
+    if(xp === "") xp = 0;
+    else xp = parseFloat(xp) / 100;
 
     if(!data.isProper(lv, data.min_lv, data.max_lv)) return alert('200레벨 이상, 300레벨 미만으로 입력해주세요!');
     if(!data.isProper(xp, 0, 100)) return alert('0%이상, 100%미만으로 입력해주세요!');
