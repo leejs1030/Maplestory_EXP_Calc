@@ -12,20 +12,16 @@ exp[258] = 1272115881767;
 exp[259] = 1310279358220;
 //2021.12.30 패치로 변경
 
-let user = {
+const user = {
     level: 0,
     exp: 0
 };
 
-const expToPercent = (cur) =>{
-    res = cur / exp[user.level];
-    return res;
-}
+const max_elixir = 100, max_lv = 300, min_lv = 200;
 
-const percentToExp = (cur) =>{
-    res = cur * exp[user.level];
-    return res;
-}
+const expToPercent = (cur) => cur / exp[user.level];
+
+const percentToExp = (cur) => cur * exp[user.level];
 
 const elixir1 = () =>{ //~209. 성장비1
     if(user.level >= 200 && user.level < 300){
@@ -164,53 +160,4 @@ const isProper = (n, m, M) =>{
     return true;
 }
 
-const main = () =>{
-    user.level = parseInt(document.getElementById("input_level").value);
-    user.exp = parseFloat(document.getElementById("input_exp").value) / 100;
-
-    if(!isProper(user.level, 200, 299)){
-        alert("사용자의 레벨은 200렙 이상 299렙 이하로 해주세요!");
-    }
-
-    if(!isProper(user.exp, 0, 1)){
-        alert("사용자의 경험치는 0%이상 100%이하로 해주세요!");
-    }
-
-    let elixirs = document.getElementsByClassName("elixir");
-    //console.log("hi");
-
-
-    for(let e = 0; e < 5; e++){
-
-        let val = elixirs[e].lastElementChild.value;
-        if(val === "") val = 0;
-        else val = parseInt(val);
-        console.log(val);
-        if(!isProper(val, 0, 100)){
-            //alert("성장의 비약 각 항목은 0 이상 100 이하의 정수로 해주세요!");
-            return;
-        }
-
-        while(val--){
-            // console.log(user.level);
-            elixir(e + 1);
-        }
-
-        if(user.level == 300) break;
-    }
-
-    // console.log(user.level);
-    // console.log(user.exp * 100);
-    document.getElementById("resultlevel").textContent = user.level;
-    document.getElementById("resultexp").textContent = Math.round(user.exp * 100 * 1000) / 1000;
-}
-
-document.getElementById("submit").addEventListener('click', ()=>{
-    main();
-});
-
-window.addEventListener("keyup", (e) => {
-    if(e.keyCode == 13){
-        main();
-    }
-});
+export {user, max_lv, min_lv, max_elixir, isProper, elixir};
