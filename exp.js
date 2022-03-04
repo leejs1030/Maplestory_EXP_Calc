@@ -14,21 +14,28 @@ exp[259] = 1310279358220;
 
 const user = {
     level: 0,
-    exp: 0
+    exp: 0,
+    percent: 0,
 };
 
 const max_elixir = 100, max_lv = 300, min_lv = 200;
 
 const expToPercent = (cur) => cur / exp[user.level];
-
 const percentToExp = (cur) => cur * exp[user.level];
+
+const setExp = (exp = user.exp) =>{
+    user.exp = exp;
+    user.percent = expToPercent(exp);
+}
+const setPercent = (percent = user.percent) =>{
+    user.percent = percent;
+    user.exp = percentToExp(percent);
+}
 
 const elixir1 = () =>{ //~209. 성장비1
     if(user.level >= 200 && user.level < 300){
-        user.exp = percentToExp(user.exp);
         if(user.level < 210){
             user.level++;
-            user.exp = expToPercent(user.exp);
         }
         else {
             user.exp += exp[209];
@@ -36,9 +43,9 @@ const elixir1 = () =>{ //~209. 성장비1
                 user.exp -= exp[user.level];
                 user.level++;
             }
-            user.exp = expToPercent(user.exp);
         }
         if(user.level == 300) user.exp = 0;
+        setExp();
     }
     else{
         console.log("사용 불가!");
@@ -47,10 +54,8 @@ const elixir1 = () =>{ //~209. 성장비1
 
 const elixir2 = () =>{ //~219. 성장비2
     if(user.level >= 200 && user.level < 300){
-        user.exp = percentToExp(user.exp);
         if(user.level < 220){
             user.level++;
-            user.exp = expToPercent(user.exp);
         }
         else {
             user.exp += exp[219];
@@ -58,9 +63,9 @@ const elixir2 = () =>{ //~219. 성장비2
                 user.exp -= exp[user.level];
                 user.level++;
             }
-            user.exp = expToPercent(user.exp);
         }
         if(user.level == 300) user.exp = 0;
+        setExp();
     }
     else{
         console.log("사용 불가!");
@@ -72,7 +77,6 @@ const elixir3 = () =>{ //~229. 성장비3
         user.exp = percentToExp(user.exp);
         if(user.level < 230){
             user.level++;
-            user.exp = expToPercent(user.exp);
         }
         else {
             user.exp += exp[229];
@@ -80,9 +84,9 @@ const elixir3 = () =>{ //~229. 성장비3
                 user.exp -= exp[user.level];
                 user.level++;
             }
-            user.exp = expToPercent(user.exp);
         }
         if(user.level == 300) user.exp = 0;
+        setExp();
     }
     else{
         console.log("사용 불가!");
@@ -91,10 +95,8 @@ const elixir3 = () =>{ //~229. 성장비3
 
 const elixir4 = () =>{ //~239. 태성비
     if(user.level >= 200 && user.level < 300){
-        user.exp = percentToExp(user.exp);
         if(user.level < 240){
             user.level++;
-            user.exp = expToPercent(user.exp);
         }
         else {
             user.exp += exp[239];
@@ -102,9 +104,9 @@ const elixir4 = () =>{ //~239. 태성비
                 user.exp -= exp[user.level];
                 user.level++;
             }
-            user.exp = expToPercent(user.exp);
         }
         if(user.level == 300) user.exp = 0;
+        setExp();
     }
     else{
         console.log("사용 불가!");
@@ -113,10 +115,8 @@ const elixir4 = () =>{ //~239. 태성비
 
 const elixir5 = () =>{ //~249. 극성비
     if(user.level >= 200 && user.level < 300){
-        user.exp = percentToExp(user.exp);
         if(user.level < 250){
             user.level++;
-            user.exp = expToPercent(user.exp);
         }
         else {
             user.exp += exp[249];
@@ -124,9 +124,9 @@ const elixir5 = () =>{ //~249. 극성비
                 user.exp -= exp[user.level];
                 user.level++;
             }
-            user.exp = expToPercent(user.exp);
         }
         if(user.level == 300) user.exp = 0;
+        setExp();
     }
     else{
         console.log("사용 불가!");
@@ -163,4 +163,4 @@ const isProper = (n, m, M) =>{
 const elixirCoin = [3, 6, 2000, 4500, 7000];
 const MPOINT = 30;
 
-export {user, max_lv, min_lv, max_elixir, elixirCoin, MPOINT, isProper, elixir};
+export {user, max_lv, min_lv, max_elixir, elixirCoin, MPOINT, isProper, elixir, setPercent, setExp};
