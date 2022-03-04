@@ -8,12 +8,12 @@ import * as data from './exp.js';
  * 
  * arr[i][1]: i개의 코인을 사용하기 직전에 어디에서 사용했는지. back-trace를 위함
  */
-let arr = new Array(50000);
-for(let i = 0; i < 50000; i++){
+let arr = new Array(data.MPOINT + 1);
+for(let i = 0; i < data.MPOINT + 1; i++){
     arr[i] = new Array(3);
     arr[i][0] = arr[i][1] = arr[i][1] = 0;
 }
-const resetArr = () => { for(let i = 0; i < 50000; i++) arr[i][0] = arr[i][1] = arr[i][1] = 0; }
+const resetArr = () => { for(let i = 0; i < data.MPOINT + 1; i++) arr[i][0] = arr[i][1] = arr[i][1] = 0; }
 /**
  * 
  * @param {number[] | data.user} arr1
