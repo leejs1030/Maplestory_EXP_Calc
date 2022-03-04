@@ -160,4 +160,7 @@ const isProper = (n, m, M) =>{
     return true;
 }
 
-export {user, max_lv, min_lv, max_elixir, isProper, elixir};
+const elixirCoin = [3, 6, 2000, 4500, 7000];
+const MPOINT = 30;
+
+export {user, max_lv, min_lv, max_elixir, elixirCoin, MPOINT, isProper, elixir};
