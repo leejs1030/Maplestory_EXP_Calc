@@ -1,0 +1,13 @@
+#help-text{
+    width: 172px;
+    position: absolute;
+    /* top: 50px; */
+    margin-left: 10px;
+    z-index: 9999999999999;
+}
+
+.collapsing {
+    -webkit-transition: none;
+    transition: none;
+    display: none;
+}
