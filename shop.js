@@ -2,17 +2,46 @@ import * as data from './exp.js';
 
 /**
  * @type {number[][]}
- * arr[i][0]: i개의 코인을 사용해서 도달 가능한 최대 레벨+경험치.
- * 예를 들어, 232.049라면 232레벨 4.9%
+ * arr[i][0]: i개의 코인을 사용해서 도달 가능한 최대치의 레벨 값
+ * 
+ * arr[i][1]: i개의 코인을 사용해서 도달 가능한 최대치의 경험치 값(비율이 아닌, 절대치)
  * 
  * arr[i][1]: i개의 코인을 사용하기 직전에 어디에서 사용했는지. back-trace를 위함
  */
 let arr = new Array(50000);
 for(let i = 0; i < 50000; i++){
-    arr[i] = new Array(2);
-    arr[i][0] = arr[i][1] = 0;
+    arr[i] = new Array(3);
+    arr[i][0] = arr[i][1] = arr[i][1] = 0;
 }
-const resetArr = () => { for(let i = 0; i < 50000; i++) arr[i][0] = arr[i][1] = 0; }
+const resetArr = () => { for(let i = 0; i < 50000; i++) arr[i][0] = arr[i][1] = arr[i][1] = 0; }
+/**
+ * 
+ * @param {number[] | data.user} arr1
+ * @param {number[] | data.user} arr2
+ * @returns {boolean}
+ * If arr1 is greater than arr2, return true.
+ * 
+ * Else, return false.
+ * 
+ * Evaluate by comparing level and exp.
+ */
+const lv_compare = (arr1, arr2) =>{
+    if(JSON.stringify(arr1) === JSON.stringify(data.user)){
+        arr1 = new Array(2);
+        arr1[0] = data.user.level;
+        arr1[1] = data.user.exp;
+    }
+    if(JSON.stringify(arr2) === JSON.stringify(data.user)){
+        arr2 = new Array(2);
+        arr2[0] = data.user.level;
+        arr2[1] = data.user.exp;
+    }
+    if(arr1[0] > arr2[0]) return true;
+    else if(arr1[0] < arr2[0]) return false;
+    else if(arr1[1] > arr2[1]) return true;
+    else if(arr1[1] < arr2[1]) return false;
+    else return false;
+}
 
 /**
  * 
@@ -28,15 +57,15 @@ const dfs = (n, POINT) => {
     let ret = n;
     for(let i = 0; i < 5; i++){
         if(n + data.elixirCoin[i] <= POINT){
-            data.user.level = parseInt(arr[n][0]);
-            data.user.percent = arr[n][0] - data.user.level;
+            data.user.level = arr[n][0];
+            data.user.exp = arr[n][1];
             if(data.user.level >= data.max_lv) break;
-            data.setPercent();
             data.elixir(i + 1);
-            if(data.user.level + data.user.percent > arr[n + data.elixirCoin[i]][0]){
-                arr[n + data.elixirCoin[i]][0] = data.user.level + data.user.percent;
-                if(arr[ret][0] < arr[n + data.elixirCoin[i]][0]) ret = n + data.elixirCoin[i];
-                arr[n + data.elixirCoin[i]][1] = n;
+            if(lv_compare(data.user, arr[n + data.elixirCoin[i]])) {
+                arr[n + data.elixirCoin[i]][0] = data.user.level;
+                arr[n + data.elixirCoin[i]][1] = data.user.exp;
+                if(lv_compare(arr[n + data.elixirCoin[i]], arr[ret])) ret = n + data.elixirCoin[i];
+                arr[n + data.elixirCoin[i]][2] = n;
                 const s = dfs(n + data.elixirCoin[i], POINT);
                 if(arr[ret][0] < arr[s][0]) ret = s;
             }
@@ -48,16 +77,18 @@ const dfs = (n, POINT) => {
 
 const showResult = (res) => {
     let printing = [0, 0, 0, 0, 0];
-    document.getElementById('result_level').textContent = parseInt(arr[res][0]);
-    document.getElementById('result_exp').textContent = Math.round((arr[res][0] - parseInt(arr[res][0])) * 100 * 1000) / 1000;
+    data.user.level = arr[res][0];
+    data.setExp(arr[res][1]);
+    document.getElementById('result_level').textContent = data.user.level;
+    document.getElementById('result_exp').textContent = Math.round(data.user.percent * 100 * 1000) / 1000;
     while(res > 0){
         for(let i = 0; i < 5; i++){
-            if(res - arr[res][1] == data.elixirCoin[i]){
+            if(res - arr[res][2] == data.elixirCoin[i]){
                 printing[i]++;
                 break;
             }
         }
-        res = arr[res][1];
+        res = arr[res][2];
     }
 
     for(let i = 0; i < 5; i++){
@@ -87,8 +118,8 @@ const main = (lv, xp, po) => {
     const POINT = po;
 
     resetArr();
-    arr[0][0] = data.user.level + data.user.percent;
-    
+    arr[0][0] = data.user.level;
+    arr[0][1] = data.user.exp;
     showResult(dfs(0, POINT));
 }
 
