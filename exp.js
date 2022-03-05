@@ -74,7 +74,6 @@ const elixir2 = () =>{ //~219. 성장비2
 
 const elixir3 = () =>{ //~229. 성장비3
     if(user.level >= 200 && user.level < 300){
-        user.exp = percentToExp(user.exp);
         if(user.level < 230){
             user.level++;
         }
