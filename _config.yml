@@ -1,0 +1,4 @@
+analytics:
+  provider               : "google-gtag" 
+  google:
+    tracking_id          : "G-2GM9RPM857"
