@@ -1,61 +1,65 @@
 <!DOCTYPE html>
 <head>
-    <title>메이플스토리 성장 비약 계산기</title>
-    <meta charset="utf-8">
-    <link type="text/css" rel="stylesheet" href="../css/bootstrap.css">
-    <link type="text/css" rel="stylesheet" href="./calc.css">
-    <script defer type="module" src="./calc.js"></script>
+  <title>메이플스토리 성장 비약 계산기</title>
+  <meta charset="utf-8">
+  <link type="text/css" rel="stylesheet" href="../css/bootstrap.css">
+  <link type="text/css" rel="stylesheet" href="./calc.css">
+  <script defer type="module" src="./calc.js"></script>
 </head>
 <body>
-    <nav class = "navbar navbar-default">
-        <div class = "container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href = ".."><img alt = "EXP" src = "../resource/expcoupon.png"></a>
-            </div>
-            <ul class= "navbar-nav nav">
-                <li>
-                <a href = "#">비약 계산기</a>
-                </li>
-                <li>
-                <a href = "../shop">비약샵 구매 추천</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <div class = "main">
-        <div class = "container-fluid">
-            <div id = "user" class = "user_info">
-                <input type = "text" id = "input_level" class = "user_info" autofocus>레벨<span class="tab">&#9;</span>
-                <input value = "0" type = "text" id = "input_exp" class = "user_info">%
-            </div>
-            <br><br><br>
-            <div id = "1st" class = "elixir">
-                성장의 비약 1<br><input type = "text" placeholder = "200 ~ 209에서 1 업">(개)
-            </div>
-            <div id = "2nd" class = "elixir">
-                성장의 비약 2<br><input type = "text" placeholder = "200 ~ 219에서 1 업">(개)
-            </div>
-            <div id = "3rd" class = "elixir">
-                성장의 비약 3<br><input type = "text" placeholder = "200 ~ 229에서 1 업">(개)
-            </div>
-            <div id = "4th" class = "elixir">
-                태풍 성장의 비약<br><input type = "text" placeholder = "200 ~ 239에서 1 업">(개)
-            </div>
-            <div id = "5th" class = "elixir">
-                극한 성장의 비약<br><input type = "text" placeholder = "200 ~ 249에서 1 업">(개)
-            </div>
-
-            <br><br><br>
-
-            <div class = "results">
-                <button id = "submit">사용</button>
-                <br><br><br>
-                결과: <span id = "resultlevel" class = "results">0</span>레벨&nbsp;&nbsp;&nbsp;<span id = "resultexp" class = "results">0</span>%
-            </div>
-        </div>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href=".."><img alt="EXP" src="../resource/expcoupon.png"></a>
+    </div>
+    <ul class="navbar-nav nav">
+      <li>
+        <a href="#">비약 계산기</a>
+      </li>
+      <li>
+        <a href="../selection">비약 선택권 추천</a>
+      </li>
+      <li>
+        <a href="../shop">비약샵 구매 추천</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="main">
+  <div class="container-fluid">
+    <div id="user" class="user_info">
+      <input type="text" id="input_level" class="user_info" autofocus>레벨<span class="tab">&#9;</span>
+      <input value="0" type="text" id="input_exp" class="user_info">%
+    </div>
+    <br><br><br>
+    <div id="1st" class="elixir">
+      성장의 비약 1<br><input type="text" placeholder="200 ~ 209에서 1 업">(개)
+    </div>
+    <div id="2nd" class="elixir">
+      성장의 비약 2<br><input type="text" placeholder="200 ~ 219에서 1 업">(개)
+    </div>
+    <div id="3rd" class="elixir">
+      성장의 비약 3<br><input type="text" placeholder="200 ~ 229에서 1 업">(개)
+    </div>
+    <div id="4th" class="elixir">
+      태풍 성장의 비약<br><input type="text" placeholder="200 ~ 239에서 1 업">(개)
+    </div>
+    <div id="5th" class="elixir">
+      극한 성장의 비약<br><input type="text" placeholder="200 ~ 249에서 1 업">(개)
     </div>
 
+    <br><br><br>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/bootstrap.js"></script>
+    <div class="results">
+      <button id="submit">사용</button>
+      <br><br><br>
+      결과: <span id="resultlevel" class="results">0</span>레벨&nbsp;&nbsp;&nbsp;<span id="resultexp"
+                                                                                   class="results">0</span>%
+    </div>
+  </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </body>
