@@ -1,4 +1,4 @@
-import * as data from './exp.js';
+import * as data from '../exp.js';
 
 const main = () =>{
     data.user.level = parseInt(document.getElementById("input_level").value);

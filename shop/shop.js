@@ -1,11 +1,11 @@
-import * as data from './exp.js';
+import * as data from '../exp.js';
 
 /**
  * @type {number[][]}
  * arr[i][0]: i개의 코인을 사용해서 도달 가능한 최대치의 레벨 값
- * 
+ *
  * arr[i][1]: i개의 코인을 사용해서 도달 가능한 최대치의 경험치 값(비율이 아닌, 절대치)
- * 
+ *
  * arr[i][1]: i개의 코인을 사용하기 직전에 어디에서 사용했는지. back-trace를 위함
  */
 let arr = new Array(data.MPOINT + 1);
@@ -15,14 +15,14 @@ for(let i = 0; i < data.MPOINT + 1; i++){
 }
 const resetArr = () => { for(let i = 0; i < data.MPOINT + 1; i++) arr[i][0] = arr[i][1] = arr[i][1] = 0; }
 /**
- * 
+ *
  * @param {number[] | data.user} arr1
  * @param {number[] | data.user} arr2
  * @returns {boolean}
  * If arr1 is greater than arr2, return true.
- * 
+ *
  * Else, return false.
- * 
+ *
  * Evaluate by comparing level and exp.
  */
 const lv_compare = (arr1, arr2) =>{
@@ -44,12 +44,12 @@ const lv_compare = (arr1, arr2) =>{
 }
 
 /**
- * 
+ *
  * @param {number} n
  * Currently used number of point(coin)
- * @param {number} POINT 
+ * @param {number} POINT
  * Total point user is having
- * @returns 
+ * @returns
  * max level and exp from using n and maximum POINT
  */
 const dfs = (n, POINT) => {
@@ -133,7 +133,7 @@ const doWithInput = () => {
     if(!data.isProper(lv, data.min_lv, data.max_lv)) return alert('200레벨 이상, 300레벨 미만으로 입력해주세요!');
     if(!data.isProper(xp, 0, 100)) return alert('0%이상, 100%미만으로 입력해주세요!');
     if(!data.isProper(po, 0, data.MPOINT)) return alert('비 정상적인 포인트 입니다.');
-    
+
     main(lv, xp, po);
 }
 

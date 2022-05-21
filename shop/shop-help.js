@@ -1,5 +1,5 @@
 // 우측 상단 로그인 닉네임을 클릭했을 때의 유저 메뉴가 뜨는 것과 관한 내용
-import * as data from './exp.js';
+import * as data from '../exp.js';
 const help_btn = document.getElementById('help-btn'); // 로그인 닉네임 부분
 const help_text = document.getElementById('help-text'); // 눌렀을 때 뜨는 박스 부분
 
