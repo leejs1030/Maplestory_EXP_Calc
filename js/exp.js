@@ -10,7 +10,7 @@ exp[256] = 1199091226098;
 exp[257] = 1235063962881;
 exp[258] = 1272115881767;
 exp[259] = 1310279358220;
-//2021.12.30 패치로 변경
+//2021.12.30 DESTINY 패치로 변경
 
 const user = {
     level: 0,
@@ -23,11 +23,11 @@ const max_elixir = 100, max_lv = 300, min_lv = 200;
 const expToPercent = (cur) => cur / exp[user.level];
 const percentToExp = (cur) => cur * exp[user.level];
 
-const setExp = (exp = user.exp) =>{
+const setByExp = (exp = user.exp) =>{
     user.exp = exp;
     user.percent = expToPercent(exp);
 }
-const setPercent = (percent = user.percent) =>{
+const setByPercent = (percent = user.percent) =>{
     user.percent = percent;
     user.exp = percentToExp(percent);
 }
@@ -45,7 +45,7 @@ const elixir1 = () =>{ //~209. 성장비1
             }
         }
         if(user.level == 300) user.exp = 0;
-        setExp();
+        setByExp();
     }
     else{
         console.log("사용 불가!");
@@ -65,7 +65,7 @@ const elixir2 = () =>{ //~219. 성장비2
             }
         }
         if(user.level == 300) user.exp = 0;
-        setExp();
+        setByExp();
     }
     else{
         console.log("사용 불가!");
@@ -85,7 +85,7 @@ const elixir3 = () =>{ //~229. 성장비3
             }
         }
         if(user.level == 300) user.exp = 0;
-        setExp();
+        setByExp();
     }
     else{
         console.log("사용 불가!");
@@ -105,7 +105,7 @@ const elixir4 = () =>{ //~239. 태성비
             }
         }
         if(user.level == 300) user.exp = 0;
-        setExp();
+        setByExp();
     }
     else{
         console.log("사용 불가!");
@@ -125,7 +125,7 @@ const elixir5 = () =>{ //~249. 극성비
             }
         }
         if(user.level == 300) user.exp = 0;
-        setExp();
+        setByExp();
     }
     else{
         console.log("사용 불가!");
@@ -162,4 +162,4 @@ const isProper = (n, m, M) =>{
 const elixirCoin = [3, 6, 2000, 4500, 7000];
 const MPOINT = 30;
 
-export {user, max_lv, min_lv, max_elixir, elixirCoin, MPOINT, isProper, elixir, setPercent, setExp};
+export {user, max_lv, min_lv, max_elixir, elixirCoin, MPOINT, isProper, elixir, setByPercent, setByExp};
