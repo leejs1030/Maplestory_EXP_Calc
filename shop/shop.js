@@ -1,4 +1,4 @@
-import * as data from '../exp.js';
+import * as data from '../js/exp.js';
 
 /**
  * @type {number[][]}
