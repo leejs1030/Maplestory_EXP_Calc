@@ -78,7 +78,7 @@ const dfs = (n, POINT) => {
 const showResult = (res) => {
     let printing = [0, 0, 0, 0, 0];
     data.user.level = arr[res][0];
-    data.setExp(arr[res][1]);
+    data.setByExp(arr[res][1]);
     document.getElementById('result_level').textContent = data.user.level;
     document.getElementById('result_exp').textContent = Math.round(data.user.percent * 100 * 1000) / 1000;
     while(res > 0){
@@ -114,7 +114,7 @@ const showResult = (res) => {
 
 const main = (lv, xp, po) => {
     data.user.level = lv; data.user.percent = xp;//Here will get data.user level, exp and point.
-    data.setPercent();
+    data.setByPercent();
     const POINT = po;
 
     resetArr();
