@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <head>
+  <script>
+    window.location.href = "https://leejs1030.github.io/maple-exp-calc";
+  </script>
   <title>메이플스토리 성장 비약 계산기</title>
   <meta charset="utf-8">
   <link type="text/css" rel="stylesheet" href="./css/bootstrap.css">
@@ -7,66 +10,64 @@
 </head>
 <body>
 
-  <nav class = "navbar navbar-default">
-    <div class = "container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href = "#"><img alt = "EXP" src = "./resource/expcoupon.png"></a>
-      </div>
-      <ul class= "navbar-nav nav">
-        <li>
-          <a href = "./calc">비약 계산기</a>
-        </li>
-        <li>
-          <a href = "./selection">비약 선택권 추천</a>
-        </li>
-        <li>
-          <a href = "./shop">비약샵 구매 추천</a>
-        </li>
-      </ul>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><img alt="EXP" src="./resource/expcoupon.png"></a>
     </div>
-  </nav>
-
-  <div class = "description">
-    <div class = "container-fluid">
-      <h1>
-        메이플스토리 경험치 계산기
-      </h1>
-      <p>
-        2021.12.30 DESTINY 패치의 경험치표를 기준으로, 비약의 경우의 수를 파악할 수 있습니다.<br>
-        <br><br><br><br>
-      </p>
-      <h2>
-        <a href = "./calc">비약 계산기</a>
-      </h2>
-      <p>
-        비약 계산기를 통하여 비약을 먹고난 후의 상태를 짐작할 수 있습니다. 여러가지 비약을 사용해보세요.<br>
-        사용자의 레벨과 경험치는 필수 입력란입니다. 200레벨 이상의 캐릭터만 지원하고, 비약의 갯수는 빈칸의 경우 0개로 취급하며, 최대 100개까지 사용 가능합니다.
-        탭 키로 항목을 이동하고, 모두 입력 후 엔터키나 버튼을 누르면 결과값을 확인하실 수 있습니다.
-        <br><br><br><br>
-      </p>
-      <h2>
-        <a href = "./selection">성장의 비약 선택권 추천기</a>
-      </h2>
-      <p>
-        4가지 중 하나를 선택할 수 있는 성장의 비약 선택권. 불편함 없이, 단 한 번의 클릭으로 최적의 경우를 구하세요.
-      </p>
-    </div>
-      <h2>
-        <a href = "./shop">비약샵 구매 추천</a>
-      </h2>
-      <p>
-      레벨별로 달라지는 비약의 효율. 그리고 여러 개의 비약을 조합을 구매할 수 있는 경우의 수. 일일히 따져보기는 까다롭습니다.<br>
-      여기에 레벨, 경험치 그리고 코인의 갯수만 입력해주신다면, 어떻게 구매해야 가장 높은 레벨과 경험치에 도달할 수 있을지 알려 드리겠습니다.<br>
-      사용자의 레벨과 경험치 그리고 코인 수는 필수 입력란입니다.<br>
-      현재 추추 페스티벌 - 시미아 샌드위치 비약샵을 기준으로 설정되어 있습니다. 따라서 코인의 갯수는 최대 30개 입니다.<br>
-      200레벨 이상의 캐릭터만 지원하며, 익성비의 경우에는 200레벨 이상에서 효율적인 구간이 아예 존재하지 않아 제외하였습니다.<br>
-      탭 키로 항목을 이동하고, 모두 입력 후 엔터키나 버튼을 누르면 결과값을 확인하실 수 있습니다.
-      </p>
+    <ul class="navbar-nav nav">
+      <li>
+        <a href="./calc">비약 계산기</a>
+      </li>
+      <li>
+        <a href="./selection">비약 선택권 추천</a>
+      </li>
+      <li>
+        <a href="./shop">비약샵 구매 추천</a>
+      </li>
+    </ul>
   </div>
+</nav>
+
+<div class="description">
+  <div class="container-fluid">
+    <h1>
+      메이플스토리 경험치 계산기
+    </h1>
+    <p>
+      2021.12.30 DESTINY 패치의 경험치표를 기준으로, 비약의 경우의 수를 파악할 수 있습니다.<br>
+      <br><br><br><br>
+    </p>
+    <h2>
+      <a href="./calc">비약 계산기</a>
+    </h2>
+    <p>
+      비약 계산기를 통하여 비약을 먹고난 후의 상태를 짐작할 수 있습니다. 여러가지 비약을 사용해보세요.<br>
+      사용자의 레벨과 경험치는 필수 입력란입니다. 200레벨 이상의 캐릭터만 지원하고, 비약의 갯수는 빈칸의 경우 0개로 취급하며, 최대 100개까지 사용 가능합니다.
+      탭 키로 항목을 이동하고, 모두 입력 후 엔터키나 버튼을 누르면 결과값을 확인하실 수 있습니다.
+      <br><br><br><br>
+    </p>
+    <h2>
+      <a href="./selection">성장의 비약 선택권 추천기</a>
+    </h2>
+    <p>
+      4가지 중 하나를 선택할 수 있는 성장의 비약 선택권. 불편함 없이, 단 한 번의 클릭으로 최적의 경우를 구하세요.
+    </p>
+  </div>
+  <h2>
+    <a href="./shop">비약샵 구매 추천</a>
+  </h2>
+  <p>
+    레벨별로 달라지는 비약의 효율. 그리고 여러 개의 비약을 조합을 구매할 수 있는 경우의 수. 일일히 따져보기는 까다롭습니다.<br>
+    여기에 레벨, 경험치 그리고 코인의 갯수만 입력해주신다면, 어떻게 구매해야 가장 높은 레벨과 경험치에 도달할 수 있을지 알려 드리겠습니다.<br>
+    사용자의 레벨과 경험치 그리고 코인 수는 필수 입력란입니다.<br>
+    현재 추추 페스티벌 - 시미아 샌드위치 비약샵을 기준으로 설정되어 있습니다. 따라서 코인의 갯수는 최대 30개 입니다.<br>
+    200레벨 이상의 캐릭터만 지원하며, 익성비의 경우에는 200레벨 이상에서 효율적인 구간이 아예 존재하지 않아 제외하였습니다.<br>
+    탭 키로 항목을 이동하고, 모두 입력 후 엔터키나 버튼을 누르면 결과값을 확인하실 수 있습니다.
+  </p>
+</div>
 
 
-
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  <script type="text/javascript" src="./js/bootstrap.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="./js/bootstrap.js"></script>
 </body>
